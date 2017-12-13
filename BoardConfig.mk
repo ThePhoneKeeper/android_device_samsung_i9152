@@ -115,5 +115,8 @@ MALLOC_SVELTE := true
 # Some of our vendor libs have text relocations
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
+# Bionic
+LINKER_NON_PIE_EXECUTABLES_HEADER_DIR := device/samsung/i9152/include
+
 # SELinux
 BOARD_SEPOLICY_DIRS += device/samsung/i9152/sepolicy
