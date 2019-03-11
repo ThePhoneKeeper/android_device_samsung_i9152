@@ -58,7 +58,7 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    libglgps-compat
+    android.hardware.gnss@1.0-impl \
 
 # Audio modules
 PRODUCT_PACKAGES += \
