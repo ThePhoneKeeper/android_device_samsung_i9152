@@ -76,6 +76,7 @@ USE_CUSTOM_AUDIO_POLICY := 1
 
 # HAL
 PRODUCT_PACKAGES += \
+    AdvancedDisplay \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.keymaster@3.0-impl \
