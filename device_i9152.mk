@@ -30,12 +30,22 @@ PRODUCT_COPY_FILES += \
 # Packages
 PRODUCT_PACKAGES += \
     charger_res_images \
-    SamsungDoze \
-    SamsungServiceMode \
+#    SamsungDoze \
     Snap
+
+# SamsungPowerHAL
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-impl \
+    power.capri
+
+#Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service \
+    wificond \
     hostapd \
     wpa_supplicant \
     wpa_supplicant.conf
@@ -52,6 +62,8 @@ PRODUCT_PACKAGES += \
 
 # Audio modules
 PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
     audio.a2dp.default \
     audio.usb.default \
     audio.r_submix.default
@@ -61,6 +73,18 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
 
 USE_CUSTOM_AUDIO_POLICY := 1
+
+# HAL
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.bluetooth@1.0-impl \
+    android.hardware.camera.provider@2.4-impl \
+
+# HIDL manifest
+PRODUCT_COPY_FILES += \
+    device/samsung/i9152/manifest.xml:system/vendor/manifest.xml
 
 # Media
 PRODUCT_COPY_FILES += \

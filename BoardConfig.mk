@@ -1,4 +1,4 @@
-USE_CAMERA_STUB := true
+]USE_CAMERA_STUB := true
 
 # Inherit from the proprietary version
 -include vendor/samsung/i9152/BoardConfigVendor.mk
@@ -19,6 +19,7 @@ TARGET_BOOTLOADER_BOARD_NAME := capri
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/i9152
+BOARD_KERNEL_IMAGE_NAME := zImage
 TARGET_KERNEL_CONFIG := lineageos_i9152_defconfig
 BOARD_KERNEL_CMDLINE := console=ttyS0,115200n8 mem=832M@0xA2000000 androidboot.console=ttyS0 vc-cma-mem=0/176M@0xCB000000
 BOARD_KERNEL_BASE := 0xa2000000
@@ -57,7 +58,7 @@ TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
 BOARD_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS -DCAPRI_HWC -DREFBASE_JB_MR1_COMPAT_SYMBOLS
 
 # CMHW
-BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ device/samsung/i9152/cmhw/
+#BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ device/samsung/i9152/cmhw/
 
 # RIL
 BOARD_RIL_CLASS := ../../../device/samsung/i9152/ril/
@@ -96,7 +97,7 @@ WIFI_BAND                           := 802_11_ABG
 
 # healthd
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.capri
-WITH_CM_CHARGER := false
+WITH_LINEAGE_CHARGER := false
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := crater,craterxx,i9152
