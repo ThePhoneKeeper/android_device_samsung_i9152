@@ -23,7 +23,7 @@ LOCAL_MODULE := libhealthd.capri
 
 LOCAL_C_INCLUDES := system/core/healthd/include/healthd \
     system/core/base/include
-
+LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_STATIC_LIBRARIES := libhealthd.default
