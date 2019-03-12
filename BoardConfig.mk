@@ -3,6 +3,10 @@
 # Inherit from the proprietary version
 -include vendor/samsung/i9152/BoardConfigVendor.mk
 
+# This variable is set first, so it can be overridden
+# by BoardConfigVendor.mk
+TARGET_USES_GRALLOC1 := true
+
 # Platform
 TARGET_BOARD_PLATFORM := capri
 
@@ -22,6 +26,7 @@ TARGET_KERNEL_SOURCE := kernel/samsung/i9152
 BOARD_KERNEL_IMAGE_NAME := zImage
 TARGET_KERNEL_CONFIG := lineageos_i9152_defconfig
 BOARD_KERNEL_CMDLINE := console=ttyS0,115200n8 mem=832M@0xA2000000 androidboot.console=ttyS0 vc-cma-mem=0/176M@0xCB000000
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0xa2000000
 BOARD_KERNEL_PAGESIZE := 4096
 
@@ -33,7 +38,7 @@ KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 8388608
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 8880000
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1572864000
 # Disable journaling on system.img to save space.
 BOARD_SYSTEMIMAGE_JOURNAL_SIZE := 0
@@ -61,8 +66,8 @@ BOARD_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS -DCAPRI_HWC -DREFBASE_JB_MR1_C
 BOARD_HARDWARE_CLASS := hardware/samsung/lineagehw/ device/samsung/i9152/lineagehw/
 
 # RIL
-BOARD_RIL_CLASS := ../../../device/samsung/i9152/ril/
-TARGET_DISABLE_ASHMEM_TRACKING := true
+#BOARD_RIL_CLASS := ../../../device/samsung/i9152/ril/
+#TARGET_DISABLE_ASHMEM_TRACKING := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -97,7 +102,7 @@ BOARD_HAL_STATIC_LIBRARIES := libhealthd.capri
 WITH_LINEAGE_CHARGER := false
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := crater,craterxx,i9152
+TARGET_OTA_ASSERT_DEVICE := none
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -114,5 +119,5 @@ MALLOC_SVELTE := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/samsung/i9152/sepolicy
-SELINUX_IGNORE_NEVERALLOWS := true
+#BOARD_SEPOLICY_DIRS += device/samsung/i9152/sepolicy
+#SELINUX_IGNORE_NEVERALLOWS := true

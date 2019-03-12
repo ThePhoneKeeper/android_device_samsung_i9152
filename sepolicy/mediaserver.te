@@ -1,1 +1,0 @@
-allow mediaserver tvserver:binder call;
