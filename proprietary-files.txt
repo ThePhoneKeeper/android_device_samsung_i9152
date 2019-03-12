@@ -4,7 +4,6 @@ bin/bkmgrd
 bin/cate_rpc_util
 bin/emma
 bin/geomagneticd
-bin/glgps
 bin/gps.cer
 bin/gpslogd
 bin/immvibed
@@ -12,7 +11,6 @@ bin/macloader
 bin/mttlogger
 bin/npsmobex
 bin/rild
-bin/tvserver
 bin/vcdbg
 bin/vclmk
 bin/vcos-version

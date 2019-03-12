@@ -66,8 +66,8 @@ BOARD_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS -DCAPRI_HWC -DREFBASE_JB_MR1_C
 BOARD_HARDWARE_CLASS := hardware/samsung/lineagehw/ device/samsung/i9152/lineagehw/
 
 # RIL
-#BOARD_RIL_CLASS := ../../../device/samsung/i9152/ril/
-#TARGET_DISABLE_ASHMEM_TRACKING := true
+BOARD_RIL_CLASS := ../../../device/samsung/i9152/ril/
+TARGET_DISABLE_ASHMEM_TRACKING := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -108,10 +108,6 @@ TARGET_OTA_ASSERT_DEVICE := none
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
 
-# Bootanimation
-TARGET_BOOTANIMATION_PRELOAD := true
-TARGET_BOOTANIMATION_TEXTURE_CACHE := true
-
 # Disable tcache
 MALLOC_SVELTE := true
 
@@ -119,5 +115,5 @@ MALLOC_SVELTE := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
 # SELinux
-#BOARD_SEPOLICY_DIRS += device/samsung/i9152/sepolicy
-#SELINUX_IGNORE_NEVERALLOWS := true
+BOARD_SEPOLICY_DIRS += device/samsung/i9152/sepolicy
+SELINUX_IGNORE_NEVERALLOWS := true

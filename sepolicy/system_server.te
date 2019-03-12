@@ -4,3 +4,8 @@ allow system_server efs_file:file { read open };
 
 # Wi-Fi
 allow system_server self:capability sys_module;
+
+allow system_server ion_device:chr_file write;
+allow system_server rild:unix_stream_socket connectto;
+allow system_server sensors_device:chr_file { ioctl open read write };
+allow system_server vendor_file:file execmod;
