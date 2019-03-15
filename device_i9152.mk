@@ -118,7 +118,7 @@ PRODUCT_COPY_FILES += \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
 # System properties
-$(call inherit-product, $(LOCAL_PATH)/system_prop.mk)
+$(call inherit-product, $(LOCAL_PATH)/system.prop)
 
 # Dalvik heap config
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
