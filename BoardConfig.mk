@@ -106,6 +106,10 @@ TARGET_OTA_ASSERT_DEVICE := i9152,I9152,GT-I9152,crater,craterxx
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
 
+# Bootanimation
+TARGET_BOOTANIMATION_PRELOAD := true
+TARGET_BOOTANIMATION_TEXTURE_CACHE := true
+
 # Disable tcache
 MALLOC_SVELTE := true
 
