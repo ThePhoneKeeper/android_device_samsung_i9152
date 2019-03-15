@@ -1,4 +1,4 @@
-]USE_CAMERA_STUB := true
+USE_CAMERA_STUB := true
 
 # Inherit from the proprietary version
 -include vendor/samsung/i9152/BoardConfigVendor.mk

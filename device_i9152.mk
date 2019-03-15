@@ -30,7 +30,7 @@ PRODUCT_COPY_FILES += \
 # Packages
 PRODUCT_PACKAGES += \
     charger_res_images \
-#    SamsungDoze \
+    SamsungDoze \
     Snap
 
 # PowerHAL
@@ -56,11 +56,11 @@ PRODUCT_PACKAGES += \
     libstlport
 
 # GPS
-#PRODUCT_PACKAGES += \
-#    android.hardware.gnss@1.0-impl \
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl \
 
 # Audio modules
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
     android.hardware.audio.effect@2.0-impl \
     audio.a2dp.default \
