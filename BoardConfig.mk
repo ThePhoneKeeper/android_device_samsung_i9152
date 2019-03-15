@@ -51,7 +51,6 @@ TARGET_RECOVERY_FSTAB := device/samsung/i9152/rootdir/fstab.capri
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_RECOVERY_DENSITY := hdpi
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/i9152/mkbootimg.mk
 TARGET_NOT_USE_GZIP_RECOVERY_RAMDISK := true
 
 # Hardware rendering
