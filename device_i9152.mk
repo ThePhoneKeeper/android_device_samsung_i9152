@@ -33,10 +33,9 @@ PRODUCT_PACKAGES += \
 #    SamsungDoze \
     Snap
 
-# SamsungPowerHAL
+# PowerHAL
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
-    power.capri
 
 #Vibrator
 PRODUCT_PACKAGES += \
