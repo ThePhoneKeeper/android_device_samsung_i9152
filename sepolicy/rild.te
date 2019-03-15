@@ -8,7 +8,6 @@ allow rild system_data_file:sock_file { create setattr unlink };
 allow rild block_device:dir search;
 allow rild radio_block_device:blk_file r_file_perms;
 allow rild storage_file:dir search;
-allow rild self:packet_socket { create ioctl };
 allow rild toolbox_exec:file rx_file_perms;
 allow rild net_radio_prop:property_service set;
 allow rild radio_data_file:dir search;
