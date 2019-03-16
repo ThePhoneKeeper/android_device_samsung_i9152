@@ -29,6 +29,7 @@ PRODUCT_COPY_FILES += \
 
 # Packages
 PRODUCT_PACKAGES += \
+    com.android.future.usb.accessory \
     charger_res_images \
     Snap
 
