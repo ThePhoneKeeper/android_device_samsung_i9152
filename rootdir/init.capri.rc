@@ -9,6 +9,8 @@ on early-init
     mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
 
 on init
+    export LD_PRELOAD "/system/lib/libsamsung_symbols.so"
+
     # Videocore
     chmod 0660 /proc/vc-dnfo
     write /proc/vc-dnfo "width 540"

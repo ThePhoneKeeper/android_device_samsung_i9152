@@ -33,6 +33,10 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     Snap
 
+# Samsung symbols
+PRODUCT_PACKAGES += \
+    libsamsung_symbols
+
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
