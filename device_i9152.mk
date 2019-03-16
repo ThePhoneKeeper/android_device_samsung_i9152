@@ -36,6 +36,7 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
+    libstagefright-shim
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -109,6 +110,7 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.camera.provider@2.4-impl \
+    libbt-vendor \
 
 # HIDL manifest
 PRODUCT_COPY_FILES += \
