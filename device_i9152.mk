@@ -55,14 +55,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     config.disable_atlas=true \
     wifi.interface=wlan0
 
-# Dalvik heap
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapgrowthlimit=64m
-
-# ART
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dex2oat-swap=false
-
 # PowerHAL
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
