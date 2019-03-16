@@ -7,4 +7,7 @@ persist.radio.multisim.config=dsds \
 ro.telephony.call_ring.multiple=0 \
 ro.telephony.call_ring=0
 
+# By default, primary storage is physical
+ro.vold.primary_physical=1
+
 
