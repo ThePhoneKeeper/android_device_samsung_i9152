@@ -32,13 +32,45 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     Snap
 
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    camera2.portability.force_api=1
+
+# Media
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true
+
+# Graphics
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.opengles.version=131072 \
+    debug.hwui.render_dirty_regions=false \
+    ro.zygote.disable_gl_preload=1 \
+    ro.sf.lcd_density=240
+
+# Misc
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.brcm.log=none \
+    persist.brcm.ap_crash=none \
+    persist.brcm.cp_crash=none \
+    config.disable_atlas=true \
+    wifi.interface=wlan0
+
+# Dalvik heap
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapgrowthlimit=64m
+
+# ART
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-swap=false
+
 # PowerHAL
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
 
 #Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl
+    android.hardware.vibrator@1.0-impl \
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
