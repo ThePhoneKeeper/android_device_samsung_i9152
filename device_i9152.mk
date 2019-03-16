@@ -59,7 +59,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # PowerHAL
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl \
+    android.hardware.power@1.0-service.capri
 
 #Vibrator
 PRODUCT_PACKAGES += \
