@@ -3,10 +3,6 @@ USE_CAMERA_STUB := true
 # Inherit from the proprietary version
 -include vendor/samsung/i9152/BoardConfigVendor.mk
 
-# This variable is set first, so it can be overridden
-# by BoardConfigVendor.mk
-TARGET_USES_GRALLOC1 := true
-
 # Platform
 TARGET_BOARD_PLATFORM := capri
 
