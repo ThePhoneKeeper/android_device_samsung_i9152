@@ -30,8 +30,6 @@ PRODUCT_COPY_FILES += \
 # Packages
 PRODUCT_PACKAGES += \
     charger_res_images \
-    SamsungDoze \
-    SamsungServiceMode \
     Snap
 
 # Wi-Fi
@@ -41,10 +39,6 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf
 
 $(call inherit-product, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
-
-# Stlport
-PRODUCT_PACKAGES += \
-    libstlport
 
 # GPS
 PRODUCT_PACKAGES += \

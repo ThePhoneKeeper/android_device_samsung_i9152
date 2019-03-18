@@ -1,0 +1,1 @@
+add_lunch_combo pa_i9152-userdebug
