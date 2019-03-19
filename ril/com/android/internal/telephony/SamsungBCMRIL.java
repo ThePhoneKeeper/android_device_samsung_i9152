@@ -140,14 +140,6 @@ public class SamsungBCMRIL extends RIL implements CommandsInterface {
         invokeOemRilRequestRaw(new byte[] { 'B', 'R', 'C', 'M', key, value }, response);
     }
 
-    static String
-    responseToString(int response) {
-        switch (response) {
-            case RIL_UNSOL_STK_SEND_SMS_RESULT: return "RIL_UNSOL_STK_SEND_SMS_RESULT";
-            default: return RIL.responseToString(response);
-        }
-    }
-
     protected RILRequest
     processSolicited (Parcel p, int type) {
         int serial, error;
@@ -250,11 +242,6 @@ public class SamsungBCMRIL extends RIL implements CommandsInterface {
             case RIL_REQUEST_DELETE_SMS_ON_SIM: ret =  responseVoid(p); break;
             case RIL_REQUEST_SET_BAND_MODE: ret =  responseVoid(p); break;
             case RIL_REQUEST_QUERY_AVAILABLE_BAND_MODE: ret =  responseInts(p); break;
-            case RIL_REQUEST_STK_GET_PROFILE: ret =  responseString(p); break;
-            case RIL_REQUEST_STK_SET_PROFILE: ret =  responseVoid(p); break;
-            case RIL_REQUEST_STK_SEND_ENVELOPE_COMMAND: ret =  responseString(p); break;
-            case RIL_REQUEST_STK_SEND_TERMINAL_RESPONSE: ret =  responseVoid(p); break;
-            case RIL_REQUEST_STK_HANDLE_CALL_SETUP_REQUESTED_FROM_SIM: ret =  responseInts(p); break;
             case RIL_REQUEST_EXPLICIT_CALL_TRANSFER: ret =  responseVoid(p); break;
             case RIL_REQUEST_SET_PREFERRED_NETWORK_TYPE: ret =  responseVoid(p); break;
             case RIL_REQUEST_GET_PREFERRED_NETWORK_TYPE: ret =  responseGetPreferredNetworkType(p); break;
@@ -286,11 +273,9 @@ public class SamsungBCMRIL extends RIL implements CommandsInterface {
             case RIL_REQUEST_SET_SMSC_ADDRESS: ret = responseVoid(p); break;
             case RIL_REQUEST_EXIT_EMERGENCY_CALLBACK_MODE: ret = responseVoid(p); break;
             case RIL_REQUEST_REPORT_SMS_MEMORY_STATUS: ret = responseVoid(p); break;
-            case RIL_REQUEST_REPORT_STK_SERVICE_IS_RUNNING: ret = responseVoid(p); break;
             case RIL_REQUEST_CDMA_GET_SUBSCRIPTION_SOURCE: ret =  responseInts(p); break;
             case RIL_REQUEST_ISIM_AUTHENTICATION: ret =  responseString(p); break;
             case RIL_REQUEST_ACKNOWLEDGE_INCOMING_GSM_SMS_WITH_PDU: ret = responseVoid(p); break;
-            case RIL_REQUEST_STK_SEND_ENVELOPE_WITH_STATUS: ret = responseICC_IO(p); break;
             case RIL_REQUEST_VOICE_RADIO_TECH: ret = responseInts(p); break;
             default:
                 throw new RuntimeException("Unrecognized solicited response: " + rr.mRequest);
@@ -384,9 +369,6 @@ public class SamsungBCMRIL extends RIL implements CommandsInterface {
         int response = p.readInt();
         Object ret;
 
-        try{switch(response) {
-            case RIL_UNSOL_STK_SEND_SMS_RESULT: ret = responseInts(p); break; // Samsung STK
-            default:
                 // Rewind the Parcel
                 p.setDataPosition(dataPosition);
 
@@ -399,15 +381,6 @@ public class SamsungBCMRIL extends RIL implements CommandsInterface {
             return;
         }
 
-        switch(response) {
-            case RIL_UNSOL_STK_SEND_SMS_RESULT:
-                if (RILJ_LOGD) unsljLogRet(response, ret);
-
-                if (mCatSendSmsResultRegistrant != null) {
-                    mCatSendSmsResultRegistrant.notifyRegistrant(
-                            new AsyncResult (null, ret, null));
-                }
-            break;
         }
     }
 
