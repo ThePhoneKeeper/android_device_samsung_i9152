@@ -9,6 +9,8 @@ $(call inherit-product, device/samsung/i9152/device_i9152.mk)
 # Inherit some common Paranoid stuff
 $(call inherit-product, vendor/pa/main.mk)
 
+TARGET_BOOT_ANIMATION_RES := 480
+
 # Device identifier. This must come after all inclusions
 PRODUCT_NAME := pa_i9152
 PRODUCT_DEVICE := i9152
