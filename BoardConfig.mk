@@ -95,8 +95,8 @@ WIFI_DRIVER_MODULE_ARG              := "firmware_path=/system/etc/wifi/bcmdhd_st
 WIFI_BAND                           := 802_11_ABG
 
 # healthd
+WITH_CM_CHARGER := true
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.capri
-WITH_CM_CHARGER := false
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := crater,craterxx,i9152
