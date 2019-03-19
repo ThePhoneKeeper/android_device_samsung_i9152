@@ -1,1 +1,1 @@
-add_lunch_combo lineage_i9152-userdebug
+add_lunch_combo slim_i9152-userdebug
